@@ -10,7 +10,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        
+        <a href="/auth/google">Click here to sign in with Google</a>
         <a
           className="App-link"
           href="https://reactjs.org"
