@@ -6,7 +6,7 @@ class Mailer extends helper.Mail {
   constructor({ subject, recipients }, content) {
     super();
 
-    this.sgApi = sendGrid(keys.sendGridKey);
+    this.sgApi = sendgrid(keys.sendGridKey);
     this.from_email = new helper.Email('no-reply@emaily.com');
     this.subject = subject;
     this.body = new helper.Content('text/html', content);
@@ -23,8 +23,6 @@ class Mailer extends helper.Mail {
     });
   }
 
-  // This is what adds the tracking functionality on the Send Grid side,
-  // Not much documentation on their website as to why it is done this way.
   addClickTracking() {
     const trackingSettings = new helper.TrackingSettings();
     const clickTracking = new helper.ClickTracking(true, true);
@@ -43,15 +41,15 @@ class Mailer extends helper.Mail {
   }
 
   async send() {
-    const request = await this.sgApi.emptyRequest({
+    const request = this.sgApi.emptyRequest({
       method: 'POST',
       path: '/v3/mail/send',
       body: this.toJSON()
     });
 
-    this.sgApi.API(request);
+    const response = await this.sgApi.API(request);
+    return response;
   }
 }
-
 
 module.exports = Mailer;
