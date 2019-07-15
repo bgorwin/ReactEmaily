@@ -13,7 +13,6 @@ mongoose.connect(keys.mongoURI);
 
 const app = express();
 
-//make use of cookies in passport
 app.use(bodyParser.json());
 app.use(
   cookieSession({
@@ -21,7 +20,6 @@ app.use(
     keys: [keys.cookieKey]
   })
 );
-// This tells Cookies to use these sessions
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -30,11 +28,11 @@ require('./routes/billingRoutes')(app);
 require('./routes/surveyRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
-  // Express will serve up producetion assests
-  // Like our main.js file, or main.css file
+  // Express will serve up production assets
+  // like our main.js file, or main.css file!
   app.use(express.static('client/build'));
 
-  // Express will servce up the index.html file
+  // Express will serve up the index.html file
   // if it doesn't recognize the route
   const path = require('path');
   app.get('*', (req, res) => {
