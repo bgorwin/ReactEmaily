@@ -10,12 +10,12 @@ class Header extends Component {
       case null:
         return "still deciding";
       case false:
-        return <li><a href="/auth/google">Login With Google</a></li>;
+        return <li><a href="/auth/google" style={{ color: "black"}}>Login With Google</a></li>;
       default:
         return [
           <li key="1"><Payments /></li>,
-          <li key="3" style={{ margin: '0 10px' }}>Credits: {this.props.auth.credits}</li>,
-          <li key="2"><a href="/api/logout">Logout</a></li>
+          <li key="3" style={{ margin: '0 10px', color: "black" }}>Credits: {this.props.auth.credits}</li>,
+          <li key="2"><a href="/api/logout" style={{ color: "black" }}>Logout</a></li>
         ];
     }
   }
@@ -23,18 +23,20 @@ class Header extends Component {
   render() {
     // console.log(this.props);
     return (
-      <nav>
-        <div className="nav-wrapper">
-          <Link
-            to={this.props.auth ? '/surveys' : '/'}
-            className="left brand-logo">
-            Emaily
-          </Link>
-          <ul className="right">
-            {this.renderContent()}
-          </ul>
-        </div>
-      </nav>
+      <div class="navbar-fixed">
+        <nav>
+          <div className="nav-wrapper grey lighten-5">
+            <Link
+              to={this.props.auth ? '/surveys' : '/'}
+              className="left brand-logo" style={{marginLeft: '10px', color: "black"}}>
+              Emaily
+            </Link>
+            <ul className="right">
+              {this.renderContent()}
+            </ul>
+          </div>
+        </nav>
+      </div>
     );
   }
 }

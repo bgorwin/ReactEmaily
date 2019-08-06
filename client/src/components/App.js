@@ -9,6 +9,8 @@ import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
 
 
+
+
 class App extends Component {
   componentDidMount() {
     this.props.fetchUser();
@@ -17,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="container">
+        <div>
           <Header />
           <Route exact path="/" component={Landing} />
           <Route exact path="/surveys" component={Dashboard} />
