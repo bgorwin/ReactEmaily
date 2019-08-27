@@ -23,7 +23,7 @@ class Header extends Component {
   render() {
     // console.log(this.props);
     return (
-      <div class="navbar-fixed">
+      <div className="navbar-fixed">
         <nav>
           <div className="nav-wrapper grey lighten-5">
             <Link

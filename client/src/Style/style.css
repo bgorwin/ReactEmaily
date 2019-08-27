@@ -5,15 +5,58 @@
 
 #howLanding {
   margin-top: 5%;
+  padding-bottom: 3%;
 }
 
 #imageHow {
-  background-image: url('../images/background.jpg');
+  text-align: center;
+  font-size: 200px;
   background-size: cover;
+  background-color: black;
+  color: #d2fafb;
   height: 335px;
   width: 335px;
   border-radius: 50%;
-  margin-left: 14%;
+  margin-left: 17%;
+  padding-top: 9%;
+  box-shadow: 10px 10px 5px #DCDCDC;
+}
+
+#imageAbout {
+  text-align: center;
+  font-size: 200px;
+  background-size: cover;
+  background-image: linear-gradient(to right, #d2fafb , #d2fafb);
+  color: black;
+  height: 335px;
+  width: 335px;
+  border-radius: 50%;
+  margin-left: 17%;
+  padding-top: 9%;
+  box-shadow: 10px 10px 5px #DCDCDC;
+}
+
+#imageContact {
+  text-align: center;
+  font-size: 200px;
+  background-size: cover;
+  background-color: black;
+  color: #d2fafb;
+  height: 335px;
+  width: 335px;
+  border-radius: 50%;
+  margin-left: 17%;
+  padding-top: 9%;
+  box-shadow: 10px 10px 5px #DCDCDC;
+}
+
+#aboutMeLanding {
+  padding-top: 1%;
+  padding-bottom: 5%;
+}
+
+#contactUsLanding {
+  text-align: center;
 }
 
 
